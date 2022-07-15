@@ -1,0 +1,12 @@
+.navbar{
+    padding: 1rem;
+    font-weight: 500;
+    color:black !important;
+    font-size: 1.5rem;
+}
+
+ Nav button{
+        border-radius: 10px !important;
+        background-color:orange !important;
+        border: none !important;
+}
