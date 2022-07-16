@@ -1,0 +1,7 @@
+.form-container{
+    margin-top: 50px !important;
+    border: 1px solid gray ;
+    padding: 10px;
+    box-shadow: 0 0 5px #dda4a4;
+    border-radius: 8px;
+}

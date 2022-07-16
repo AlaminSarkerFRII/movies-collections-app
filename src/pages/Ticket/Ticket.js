@@ -5,16 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import "./Ticket.css"
 
 const Ticket = ({ ticket }) => {
-
     const navigate = useNavigate()
-    const { id, name, type, language, url, image, averageRuntime, summary } = ticket.show
+    const { id, name, type, url, image,summary } = ticket.show
     
     const handleTickectDetails = () => {
         navigate(`/ticket/${id}`)
         // console.log(ticket)
     }
     return (
-        <div className="">
+        <>
             <div className="col">
                 <Card >
                     <Card.Img variant="top" src={image.medium} />
@@ -28,7 +27,7 @@ const Ticket = ({ ticket }) => {
                     </Card.Body>
                 </Card>
             </div>
-        </div>
+        </>
     );
 };
 
