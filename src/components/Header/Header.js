@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import './Header.css'
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 // import {NavLink} from "react-router-dom"
 
 
@@ -19,7 +20,7 @@ const Header = ()=> {
             <Nav.Link to="book">Books</Nav.Link>
           </Nav>
           <Nav>
-            <button className="btn btn-primary">sign up</button>
+            <Link to="/login" className="btn btn-primary">sign up</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
