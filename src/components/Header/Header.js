@@ -8,16 +8,16 @@ import { Link } from 'react-router-dom';
 
 const Header = ()=> {
   return (
-    <Navbar className="navbar" expand="lg">
+    <Navbar className="navbar " expand="lg">
       <Container>
-        <Navbar.Brand to="/">FilMoja</Navbar.Brand>
+        <Navbar.Brand to="/" className="fs-2 text-orange">MINI SHOP</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link to="/">Home</Nav.Link>
-            <Nav.Link to="about">About</Nav.Link>
-            <Nav.Link to="show">Link</Nav.Link>
-            <Nav.Link to="book">Books</Nav.Link>
+          <Nav className="ms-auto navbarScroll me-4">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/show">Products</Link>
+            <Link to="book">Books</Link>
           </Nav>
           <Nav>
             <Link to="/login" className="btn btn-primary">sign up</Link>

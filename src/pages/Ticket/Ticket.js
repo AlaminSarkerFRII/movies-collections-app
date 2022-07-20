@@ -6,7 +6,9 @@ import "./Ticket.css"
 
 const Ticket = ({ ticket }) => {
     const navigate = useNavigate()
-    const { id, name, type, url, image,summary } = ticket.show
+    const { id, title,price,description,image } = ticket
+
+    
     
     const handleTickectDetails = () => {
         navigate(`/ticket/${id}`)
@@ -15,13 +17,14 @@ const Ticket = ({ ticket }) => {
     return (
         <>
             <div className="col">
-                <Card >
-                    <Card.Img variant="top" src={image.medium} />
+                <Card className="p-4 text-center">
+                    <Card.Img style={{width:"200px", height:"200px"}} variant="top" src={image} />
                     <Card.Body>
-                        <Card.Title>{name}</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                        <Card.Title>{title}</Card.Title>
+                        <h5>Price : {price}$</h5>
+
+                        <Card.Text  className='text-md-start'>
+                           {description.substring(0, 150)}                
                         </Card.Text>
                         <Button onClick={handleTickectDetails} variant="primary">Details</Button>
                     </Card.Body>

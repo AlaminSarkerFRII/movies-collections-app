@@ -8,7 +8,7 @@ const Tickets = () => {
     const [tickets, setTickets] = useState([])
 
     useEffect(() => {
-        const url = "https://api.tvmaze.com/search/shows?q=all"
+        const url = "https://fakestoreapi.com/products"
         fetch(url)
             .then(response => response.json())
             .then(data => setTickets(data));
@@ -16,8 +16,8 @@ const Tickets = () => {
 
     return (
         <div className="container">
-            <h2>Tickets {tickets.length}</h2>
-            <Row xs={1} md={2} lg={4} className="g-4">
+            <h2>Products {tickets.length}</h2>
+            <Row xs={1} md={2} lg={3} className="g-4">
             {
                 tickets.map((ticket) => <Ticket 
                 ticket={ticket}

@@ -1,40 +1,37 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
 import {useParams } from "react-router-dom"
 
 const TicketDetails = () => {
     const { id } = useParams()
-    const [tickets, setTickets] = useState({})
-    const { name, summary, image, url } = tickets.show.show;
-    console.log(tickets.show, "buying")
+    const [product, setProduct] = useState({})
+    // const {  title, description, image } = product
+
 
     useEffect(() => {
-        const url = "https://api.tvmaze.com/search/shows?q=all"
+        const url = `https://fakestoreapi.com/products/${id}`
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                if (data) {
-                    const singleItem = data.find(item => item.show.id === parseInt(id))
-                    setTickets(singleItem)
-                    // console.log(singleItem)
-                }
+                setProduct(data)
+                console.log(data)
             });
     }, [])
-
-    // console.log(ticket.id);
-
-    // data show korena 
 
     return (
         <div className="container mt-5">
             <div class="card mb-3" >
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="" class="img-fluid rounded-start" alt="show-images" />
+                        <img src={product.image} class="img-fluid rounded-start p-4" alt="show-images" />
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Name:{name}</h5>
-                            <p class="card-text">{summary}</p>
+                        <div class="card-body justify-content-center">
+                            <h5 class="card-title">{product.title}</h5>
+                            <h6 class="card-title">{product.category}</h6>
+                            <h6 class="card-title">Price: {product.price} $</h6>
+                            <p class="card-text">{product.description}</p>
+                            <Button>Booking Now</Button>
                         </div>
                     </div>
                 </div>
